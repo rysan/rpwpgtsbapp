@@ -10,7 +10,21 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import "./layout.css"
+import "./bootstrap-grid.min.css"
+//import "./main.css"
+import styled, {createGlobalStyle} from "styled-components"
+import MainMenu from "./MainMenu"
+
+const GlobalStyles = createGlobalStyle`
+    body, html{
+        margin:0 !important;
+        padding:0 !important;
+    }
+`
+const LayoutWrapper = styled.div`
+max-width:960px;
+margin:0 auto;
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,20 +39,20 @@ const Layout = ({ children }) => {
 
   return (
     <>
+        <GlobalStyles />
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+      <div>
+        <MainMenu />
+        <LayoutWrapper>
+        
         <main>{children}</main>
+        
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
+        </LayoutWrapper>
       </div>
     </>
   )
