@@ -25,22 +25,6 @@ exports.createPages = async ({ graphql, actions }) => {
             template
             title
             content
-            acf{
-                url
-            }
-          }
-        }
-      }
-      allWordpressPost {
-        edges {
-          node {
-            id
-            slug
-            status
-            template
-            format
-            title
-            content
           }
         }
       }
@@ -81,11 +65,5 @@ exports.createPages = async ({ graphql, actions }) => {
   // The path field stems from the original WordPress link
   // and we use it for the slug to preserve url structure.
   // The Post ID is prefixed with 'POST_'
-  allWordpressPost.edges.forEach(edge => {
-    createPage({
-      path: `/post/${edge.node.slug}/`,
-      component: slash(postTemplate),
-      context: edge.node,
-    })
-  })
+  
 }

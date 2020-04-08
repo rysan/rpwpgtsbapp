@@ -24,7 +24,7 @@ padding: 8px 16px;
 const MainMenu = () => (
     <StaticQuery query={graphql`
         {
-  allWordpressWpApiMenusMenusItems(filter: {name: {eq: "Main Menu"}}) {
+  allWordpressWpApiMenusMenusItems(filter: {name: {eq: "TopNav"}}) {
     edges {
       node {
         items {
