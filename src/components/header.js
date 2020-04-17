@@ -1,33 +1,36 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+//import Navigation from './Navigation'
+
+import PantherLogo from "../images/Panther-Dark-Logo-white.png"
+import Navigation from "./Navigation"
 
 const Header = ({ siteTitle }) => (
-  <header
+    
+  <header className="header"
     style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
+      background: `#D8D8D8`,
     }}
   >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
+    <div className="container">
+        <div className="d-flex flex-row align-items-center" style={{
+            paddingTop:`40px`, paddingBottom:`40px`,
+        }}>
+        <Link to="/" className="d-block" style={{
+            maxWidth: `152px`,
+        }}>
+        <img src={PantherLogo} alt="panther logo" className="img-fluid" />
         </Link>
-      </h1>
+        <div className="ml-auto position-relative" style={{minHeight: `45px`,}}>
+            <nav id="nav">
+                <Navigation />
+            </nav>
+        </div>
+        
+      </div>
     </div>
+    
   </header>
 )
 

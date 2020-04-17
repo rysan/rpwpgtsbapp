@@ -9,11 +9,15 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
+import { withPrefix } from "gatsby"
+import Helmet from "react-helmet"
 import Header from "./header"
-import "./bootstrap-grid.min.css"
-//import "./main.css"
+//import "./bootstrap-grid.min.css"
+import "./main.css"
 import styled, {createGlobalStyle} from "styled-components"
-import MainMenu from "./MainMenu"
+//import MainMenu from "./MainMenu"
+//import Navigation from "./Navigation"
+import Footer from "./footer"
 
 const GlobalStyles = createGlobalStyle`
     body, html{
@@ -21,10 +25,7 @@ const GlobalStyles = createGlobalStyle`
         padding:0 !important;
     }
 `
-const LayoutWrapper = styled.div`
-max-width:960px;
-margin:0 auto;
-`
+const LayoutWrapper = styled.div``
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -40,18 +41,17 @@ const Layout = ({ children }) => {
   return (
     <>
         <GlobalStyles />
+        <Helmet>
+            <script src={withPrefix("menu.js")} />
+        </Helmet>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div>
-        <MainMenu />
+      <div id="main" className="main-container">
+        
         <LayoutWrapper>
         
         <main>{children}</main>
         
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <Footer />
         </LayoutWrapper>
       </div>
     </>

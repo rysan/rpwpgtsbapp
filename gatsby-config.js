@@ -119,11 +119,13 @@ module.exports = {
           "**/media",
           "**/tags",
           "**/taxonomies",
-          "**/users",
           "**/menus",
         ],
         // Blacklisted routes using glob patterns
-        excludedRoutes: [],
+        excludedRoutes: [
+        "/wp/v2/users/**",
+        "/wp/v2/settings*",
+        ],
         // Set this to keep media sizes.
         // This option is particularly useful in case you need access to
         // URLs for thumbnails, or any other media detail.
@@ -152,6 +154,14 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-hubspot",
+      options: {
+          trackingCode: "1234567",
+          respectDNT: true,
+          productionOnly: true,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

@@ -1,36 +1,23 @@
 import React from "react"
-
+import SEO from "../components/seo"
 
 import Layout from "../components/layout"
-
-import { graphql, StaticQuery } from 'gatsby'
+import Hero from "../components/index/Hero"
+import Features from "../components/index/Features"
+import Slider from "../components/index/Slider"
+import OtherFeatures from "../components/index/OtherFeatures"
+import Featured from "../components/index/Featured"
+import CTABanner from "../components/index/CTABanner"
 
 const IndexPage = () => (
   <Layout>
-    <StaticQuery query={graphql`
-    {
-  allWordpressPage{
-    edges{
-      node{
-        id
-      	title
-        content
-      }
-    }
-  }
-}
-    `} render={props => (
-        <div>
-        {props.allWordpressPage.edges.map(page => (
-            <div key={page.node.id}>
-                <h1>
-                {page.node.title}
-                </h1>
-                <div dangerouslySetInnerHTML={{__html: page.node.content}} />
-            </div>
-            ))}
-        </div>
-        )} />
+  <SEO title="Home" keywords={['Runpanther', 'test', 'test2']} />
+  <Hero />
+  <Features />
+  <Slider />
+  <OtherFeatures />
+  <Featured />
+  <CTABanner />
   </Layout>
 )
 

@@ -9,7 +9,7 @@ const { slash } = require(`gatsby-core-utils`)
 // Will create pages for WordPress posts (route : /post/{slug})
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions
-  createRedirect({ fromPath: '/', toPath: '/home', redirectInBrowser: true, isPermanent: true })
+  createRedirect({ fromPath: '/home', toPath: '/', redirectInBrowser: true, isPermanent: true })
   // The ?graphql? function allows us to run arbitrary
   // queries against the local Gatsby GraphQL schema. Think of
   // it like the site has a built-in database constructed
