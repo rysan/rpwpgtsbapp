@@ -6,7 +6,7 @@ const Features = () => (
     
     <StaticQuery query={graphql`
         {
-  allWordpressPage(filter: {wordpress_id: {eq: 2}}) {
+  allWordpressPage(filter:   {slug: {eq: "home"}}) {
     edges {
       node {
         acf {
