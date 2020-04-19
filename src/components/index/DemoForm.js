@@ -47,12 +47,12 @@ export default () => (
             }}
   >
   {() => (
-    <Form name="Request a Demo" method="post" data-netlify={true}>
+    <Form name="Request a Demo" method="post" netlify-honeypot="bot-field" data-netlify="true">
       
       
-      <Field type="email" name="email" placeholder="Email" />
+      <Field type="email" name="email" component="input" placeholder="Email" />
       <ErrorMessage name="email" />
-      <Field type="hidden" name="bot-field" />
+      <Field type="hidden" name="bot-field" component="input" />
       
       <button type="submit">Send</button>
     </Form>
