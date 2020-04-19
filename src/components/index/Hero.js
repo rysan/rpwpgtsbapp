@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import Img from "gatsby-image"
-//import DemoForm from "./DemoForm"
+import DemoForm from "./DemoForm"
 
 //import WPShortcodes from "./shortcodes"
 //import { MDXProvider } from "@mdx-js/react"
@@ -60,11 +60,7 @@ const Hero = () => (
                         <h1>{props.allWordpressPage.edges[0].node.acf.sections_page[0].content.heading}</h1>
                         <p>{props.allWordpressPage.edges[0].node.acf.sections_page[0].content.paragraph}</p>
                     </div>
-                    <form method="post" netlify-honeypot="bot-field" data-netlify="true">
-                        <input type="email" name="email" />
-                        <input type="hidden" name="bot-field" />
-                        <button type="submit">Send</button>
-                    </form>
+                    <DemoForm />
                 </div>
                 <div className="col-md-6">
                 <Img fluid={props.allWordpressPage.edges[0].node.acf.sections_page[0].image.localFile.childImageSharp.fluid} />

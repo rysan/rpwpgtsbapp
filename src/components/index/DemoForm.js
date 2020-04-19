@@ -1,9 +1,19 @@
 import React from "react"
 import { Formik, Form, Field, ErrorMessage } from "formik"
 
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
+  
 export default () => (
+  
+
   <Formik
     initialValues={{
+      'bot-field': '',
+      'form-name': 'Request a Demo',
       email: '',
     }}
     onSubmit={(values, actions) => {
@@ -11,13 +21,14 @@ export default () => (
         //console.log(JSON.stringify(values, null, 2));
         //actions.setSubmitting(false);
         
-        fetch("https://api.hsforms.com/submissions/v3/integration/submit/6015771/ae3bc173-e234-462e-84a4-56b3a8ddb8f9", {
-                    method: "post",
+        fetch("/", {
+                    method: "POST",
                     headers: {
-                        "Content-Type": "application/json",
-                        "Accept": "application/json, application/xml, text/plain, text/html, *.*",
+                        "Content-Type": "application/x-www-form-urlencoded",
                     },
-                    body: JSON.stringify(values)
+                    body: encode({
+        values,
+      })
                 })
                 .then(() => {          
                     alert("Success");          
@@ -38,7 +49,7 @@ export default () => (
             }}
   >
   {() => (
-    <Form>
+    <Form name="Request a Demo" method="post" netlify-honeypot="bot-field" data-netlify="true">
       
       
       <Field type="email" name="email" placeholder="Email" />
