@@ -12,6 +12,8 @@ export default () => (
 
   <Formik
     initialValues={{
+      'bot-field': '',
+      'form-name': 'Request a Demo',
       email: '',
     }}
     onSubmit={(values, actions) => {
@@ -47,11 +49,12 @@ export default () => (
             }}
   >
   {() => (
-    <Form name="Request a Demo" method="post" netlify-honeypot="bot-field" data-netlify="true">
+    <Form name="contact" method="post" netlify-honeypot="bot-field" data-netlify="true">
       
       
       <Field type="email" name="email" placeholder="Email" />
       <ErrorMessage name="email" />
+      <Input type="hidden" name="form-name" value="contact" />
       
       <button type="submit">Send</button>
     </Form>
