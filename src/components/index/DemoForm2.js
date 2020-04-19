@@ -1,17 +1,20 @@
 import React from "react"
 import { Formik, Form, Field, ErrorMessage } from "formik"
+import { navigate } from "gatsby"
 
 export default () => (
   <Formik
     initialValues={{
-      email: "",
+    "your-subject":"Request a Demo form",
+    "your-name":"Subscriber",
+    email: "",
     }}
     onSubmit={(values, actions) => {
         //console.log("submit: ", values)
         //setSubmitting(false);
         //console.log(JSON.stringify(values, null, 2));
         
-        fetch("https://qarunpanther.wpengine.com/wp-json/contact-form-7/v1/contact-forms/25717/feedback", {
+        fetch("/", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -19,8 +22,9 @@ export default () => (
                     body: JSON.stringify(values)
                 })
                 .then(() => {          
-                    alert("Success");          
-                    actions.resetForm()        
+                    //alert("Success");          
+                    //actions.resetForm()
+                    navigate('/thank-you')        
                     })        
                 .catch(() => {          
                         alert("Error");        
@@ -37,7 +41,7 @@ export default () => (
             }}
   >
   {() => (
-    <Form>
+    <Form name="contact" method="post" action="http://localhost/wp532/wp-json/contact-form-7/v1/contact-forms/206/feedback">
       
       
       <Field type="email" name="email" placeholder="Email" />

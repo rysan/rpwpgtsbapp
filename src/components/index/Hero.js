@@ -60,11 +60,10 @@ const Hero = () => (
                         <h1>{props.allWordpressPage.edges[0].node.acf.sections_page[0].content.heading}</h1>
                         <p>{props.allWordpressPage.edges[0].node.acf.sections_page[0].content.paragraph}</p>
                     </div>
-                    <form method="post" action="https://qarunpanther.wpengine.com/wp-json/contact-form-7/v1/contact-forms/25717/feedback">
+                    <form method="post" netlify-honeypot="bot-field" data-netlify="true">
                         <input type="email" name="email" />
-                        <input type="hidden" name="your-subject" value="Request a Demo form" />
-                        <input type="hidden" name="your-name" value="Subscriber" />
-                      <button type="submit">Send</button>
+                        <input type="hidden" name="bot-field" />
+                        <button type="submit">Send</button>
                     </form>
                 </div>
                 <div className="col-md-6">
