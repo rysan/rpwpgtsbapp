@@ -1,19 +1,13 @@
 import React from "react"
 import { Formik, Form, Field, ErrorMessage } from "formik"
 
-function encode(data) {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
-}
+
   
 export default () => (
   
 
   <Formik
     initialValues={{
-      'name': '',
-      'bot-field': '',
       email: '',
     }}
     onSubmit={(values, actions) => {
@@ -21,12 +15,12 @@ export default () => (
         //console.log(JSON.stringify(values, null, 2));
         //actions.setSubmitting(false);
         
-        fetch("/", {
+        fetch("http://localhost/wp532/wp-json/contact-form-7/v1/contact-forms/206/feedback", {
                     method: "POST",
                     headers: {
-                        "Content-Type": "application/x-www-form-urlencoded",
+                        "Content-Type": "application/json",
                     },
-                    body: encode({ "form-name": "Request a Demo", ...values })
+                    body: JSON.stringify( values )
                 })
                 .then(() => {          
                     alert("Success");          
@@ -47,12 +41,12 @@ export default () => (
             }}
   >
   {() => (
-    <Form name="Request a Demo" method="post" netlify-honeypot="bot-field" data-netlify="true">
+    <Form name="Request a Demo" method="post">
       
       
       <Field type="email" name="email" component="input" placeholder="Email" />
       <ErrorMessage name="email" />
-      <Field type="hidden" name="bot-field" component="input" />
+      
       
       <button type="submit">Send</button>
     </Form>

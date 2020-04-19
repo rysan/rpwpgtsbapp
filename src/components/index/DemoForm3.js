@@ -7,19 +7,10 @@ import { Form, Field } from 'react-final-form'
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 const onSubmit = async values => {
-  await sleep(300)
-  window.alert(JSON.stringify(values, 0, 2))
-  fetch('http://localhost/wp532/wp-json/contact-form-7/v1/contact-forms/206/feedback', {
-        method: 'POST',
-        // We convert the React state to JSON and send it as the POST body
-        headers: {
-                        "Content-Type": "application/json",
-                    },
-        body: JSON.stringify(values, 0, 2)
-      })
-      .then(() => {
-        alert("Success"); 
-      })
+  //await sleep(300)
+  //window.alert(JSON.stringify(values, 0, 2))
+  
+      
 
 }
 
@@ -29,7 +20,7 @@ export default () => (
       onSubmit={onSubmit}
       initialValues={{ email: '' }}
       render={({ handleSubmit, form, submitting, pristine, values }) => (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} method="post" action="http://localhost/wp532/wp-json/contact-form-7/v1/contact-forms/206/feedback">
           <div>
             
             <Field
