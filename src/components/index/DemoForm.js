@@ -12,8 +12,6 @@ export default () => (
 
   <Formik
     initialValues={{
-      'bot-field': '',
-      'form-name': 'Request a Demo',
       email: '',
     }}
     onSubmit={(values, actions) => {
