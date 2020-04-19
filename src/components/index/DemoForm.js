@@ -52,7 +52,7 @@ export default () => (
     <Form name="contact" method="post" netlify-honeypot="bot-field" data-netlify="true">
       
       
-      <Field type="email" name="email" placeholder="Email" />
+      <Input type="email" name="email" placeholder="Email" />
       <ErrorMessage name="email" />
       <Input type="hidden" name="form-name" value="contact" />
       
