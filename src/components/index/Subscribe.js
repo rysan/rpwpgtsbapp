@@ -1,5 +1,6 @@
 import React from "react";
 import gql from "graphql-tag";
+//import { createMuiTheme, withStyles, makeStyles, ThemeProvider } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { Formik, Field, Form } from "formik";
 import { TextField } from "formik-material-ui";
@@ -44,16 +45,18 @@ const Subscribe = () => {
         render={({ errors, status, touched }) => (
           <Form className="d-flex ">
             <Field
-              label="Email"
+              placeholder="Enter work email"
               name="email"
               type="text"
               component={TextField}
               margin="normal"
               variant="outlined"
+              size="small"
               fullWidth
               style={{maxWidth:'60%', margin:'0 15px 0 0'}}
+              className="form-control"
             />
-            <Button type="submit" variant="outlined" color="primary" style={{height:'56px', margin:'0 0 20px 0'}}>
+            <Button type="submit" variant="contained" color="primary" size="medium" style={{height:'40px', margin:'0 0 20px 0', textTransform:'none'}}>
               Request a Demo
             </Button>{" "}
             
