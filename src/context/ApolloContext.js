@@ -5,9 +5,6 @@ import fetch from 'isomorphic-fetch';
 
 export const client = new ApolloClient({
   uri: `https://qarunpanther.wpengine.com/graphql`,
-  fetchOptions: {
-          mode: 'no-cors',
-        },
   fetch,
 })
 
