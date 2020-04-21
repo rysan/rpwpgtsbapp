@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import Img from "gatsby-image"
-//import DemoForm from "./DemoForm"
+import Subscribe from "./Subscribe"
 
 //import WPShortcodes from "./shortcodes"
 //import { MDXProvider } from "@mdx-js/react"
@@ -60,12 +60,7 @@ const Hero = () => (
                         <h1>{props.allWordpressPage.edges[0].node.acf.sections_page[0].content.heading}</h1>
                         <p>{props.allWordpressPage.edges[0].node.acf.sections_page[0].content.paragraph}</p>
                     </div>
-                    <form method="post" action="https://qarunpanther.wpengine.com/wp-json/contact-form-7/v1/contact-forms/25717/feedback">
-                        <input type="email" name="email" />
-                        <input type="hidden" name="your-subject" value="Request a Demo form" />
-                        <input type="hidden" name="your-name" value="Subscriber" />
-                      <button type="submit">Send</button>
-                    </form>
+                    <Subscribe />
                 </div>
                 <div className="col-md-6">
                 <Img fluid={props.allWordpressPage.edges[0].node.acf.sections_page[0].image.localFile.childImageSharp.fluid} />
