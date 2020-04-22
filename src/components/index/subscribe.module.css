@@ -1,0 +1,4 @@
+.wrapWhiteBg input[type="text"]:focus{
+    background:#fff;
+    border-radius:4px;
+}

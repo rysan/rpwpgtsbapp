@@ -6,6 +6,7 @@ import { Formik, Field, Form } from "formik";
 import { TextField } from "formik-material-ui";
 import * as Yup from "yup";
 import { useMutation } from "@apollo/react-hooks";
+import subscribeStyles from "./subscribe.module.css";
 
 const CONTACT_MUTATION = gql`
   mutation CreateSubmissionMutation($clientMutationId: String!, $email: String!){
@@ -54,7 +55,7 @@ const Subscribe = () => {
               size="small"
               fullWidth
               style={{maxWidth:'60%', margin:'0 15px 0 0'}}
-              className="form-control"
+              className={subscribeStyles.wrapWhiteBg}
             />
             <Button type="submit" variant="contained" color="primary" size="medium" style={{height:'40px', margin:'0 0 20px 0', textTransform:'none'}}>
               Request a Demo
