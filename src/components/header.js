@@ -1,12 +1,12 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
+//import PropTypes from "prop-types"
 import React from "react"
 //import Navigation from './Navigation'
 
 import PantherLogo from "../images/Panther-Dark-Logo-white.png"
 import Navigation from "./Navigation"
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
     
   <header className="header"
     style={{
@@ -33,13 +33,5 @@ const Header = ({ siteTitle }) => (
     
   </header>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header

@@ -29,6 +29,7 @@
     "gatsby-source-wordpress": "^3.2.3",
     "gatsby-transformer-sharp": "^2.4.3",
     "graphql-tag": "^2.10.3",
+    "innertext": "^1.0.3",
     "isomorphic-fetch": "^2.2.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",

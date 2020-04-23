@@ -7,10 +7,10 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+//import { useStaticQuery, graphql } from "gatsby"
 
-import { withPrefix } from "gatsby"
-import Helmet from "react-helmet"
+//import { withPrefix } from "gatsby"
+//import Helmet from "react-helmet"
 import Header from "./header"
 //import "./bootstrap-grid.min.css"
 import "./main.css"
@@ -28,7 +28,7 @@ const GlobalStyles = createGlobalStyle`
 const LayoutWrapper = styled.div``
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
+  /*const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
@@ -36,15 +36,13 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `)*/
 
   return (
     <>
         <GlobalStyles />
-        <Helmet>
-            <script src={withPrefix("menu.js")} />
-        </Helmet>
-      <Header siteTitle={data.site.siteMetadata.title} />
+        
+      <Header />
       <div id="main" className="main-container">
         
         <LayoutWrapper>
