@@ -1,9 +1,35 @@
 import React from "react"
 import { graphql, StaticQuery } from 'gatsby'
-import { withPrefix } from "gatsby"
-import Helmet from "react-helmet"
-import Img from "gatsby-image"
 
+import Swiper from 'react-id-swiper'
+import Img from "gatsby-image"
+//import 'swiper/css/swiper.min.css';
+//import sliderStyles from "./slider.module.css";
+
+const params = {
+        //containerClass: 'swiper-container d-flex',
+        //wrapperClass: 'swiper-wrapper col-md-9 col-lg-8 ml-auto',
+        pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+            if(index === 0){
+                return '<span class="' + className + '">Log Analysis<div></div></span>';
+            } else if(index === 1) {
+                return '<span class="' + className + '">Continuous Monitoring<div></div></span>';
+            } else if(index === 2) {
+                return '<span class="' + className + '">Threat Hunting<div></div></span>';
+            } else if(index === 3) {
+                return '<span class="' + className + '">Incident Investigation<div></div></span>';
+            } else if(index === 4) {
+                return '<span class="' + className + '">Automatic Remediation<div></div></span>';
+            } else if(index === 5) {
+                return '<span class="' + className + '">Historical Search<div></div></span>';
+            }
+        },
+      }
+      
+      }
 const Slider = () => (
     <StaticQuery query={graphql`
         {
@@ -41,10 +67,7 @@ const Slider = () => (
 }
         `} render={props => (
             <>
-            <Helmet>
-            <script src={withPrefix("swiper.min.js")} />
-            <script src={withPrefix("main.js")} />
-            </Helmet>
+            
             <div style={{
                 background:`#F0F0F0`,
                 paddingTop:`89px`,
@@ -57,14 +80,11 @@ const Slider = () => (
                         </div>
                     </div>
                     <div className="row block-pn1">
-                        <div className="col-md-3 col-lg-2">
-                            <div className="swiper-pagination d-none d-md-block"></div>
-                        </div>
-                        <div className="col-md-9 col-lg-8">
-                            <div className="swiper-container">
-                                <div className="swiper-wrapper">
+                        
+                        <div className="col-md-9 col-lg-9 mx-auto" style={{transform:`translateX(84px)`}}>
+                            <Swiper {...params}>
                                 {props.allWordpressPage.edges[0].node.acf.sections_page[2].slides.map((item, i) => (
-                                    <div key={i} className="swiper-slide">
+                                    <div key={i}>
                                         <div className="d-md-flex no-gutters">
                                             <div className="col-md-8 p-pn9 mw-650 order-md-2">
                                                 <Img fluid={item.image.localFile.childImageSharp.fluid} />
@@ -76,8 +96,7 @@ const Slider = () => (
                                         </div>
                                     </div>
                                 ))}    
-                                </div>
-                            </div>
+                            </Swiper>    
                         </div>
                     </div>
                 </div>

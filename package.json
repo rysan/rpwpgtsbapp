@@ -37,7 +37,9 @@
     "react-final-form": "^6.4.0",
     "react-helmet": "^5.2.1",
     "react-hook-form": "^5.4.2",
+    "react-id-swiper": "^3.0.0",
     "styled-components": "^5.1.0",
+    "swiper": "^5.3.8",
     "useref": "^1.4.3",
     "yup": "^0.28.4"
   },
