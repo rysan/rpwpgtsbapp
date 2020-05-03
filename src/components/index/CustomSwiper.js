@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Swiper from 'react-id-swiper';
 
 
-  const ManipulatingComponentOutSideSwiper = ({children}) => {
+  const CustomSwiper = ({children}) => {
 
   var slides = document.getElementsByClassName("swiper-slide");
     
@@ -49,5 +49,5 @@ import Swiper from 'react-id-swiper';
     );
   };
 
-  export default ManipulatingComponentOutSideSwiper;
+  export default CustomSwiper;
     

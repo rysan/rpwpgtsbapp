@@ -1,10 +1,10 @@
 import React from "react"
 import { graphql, StaticQuery } from 'gatsby'
-import Swiper from 'react-id-swiper';
+
 import Img from "gatsby-image"
 //import 'swiper/css/swiper.min.css';
 //import sliderStyles from "./slider.module.css";
-import Swiper from "./CustomSwiper"
+import CustomSwiper from "./CustomSwiper"
 
 
 const Slider = () => (
@@ -60,7 +60,7 @@ const Slider = () => (
                     <div className="row block-pn1">
                         
                         <div className="col-md-9 col-lg-9 mx-auto" style={{transform:`translateX(84px)`}}>
-                            <Swiper>
+                            <CustomSwiper>
                                 {props.allWordpressPage.edges[0].node.acf.sections_page[2].slides.map((item, i) => (
                                     <div data-name={item.content.title} key={i}>
                                         <div className="d-md-flex no-gutters">
@@ -74,7 +74,7 @@ const Slider = () => (
                                         </div>
                                     </div>
                                 ))}    
-                            </Swiper>    
+                            </CustomSwiper>    
                         </div>
                     </div>
                 </div>
