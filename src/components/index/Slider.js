@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, StaticQuery } from 'gatsby'
-
+import Swiper from 'react-id-swiper';
 import Img from "gatsby-image"
 //import 'swiper/css/swiper.min.css';
 //import sliderStyles from "./slider.module.css";
