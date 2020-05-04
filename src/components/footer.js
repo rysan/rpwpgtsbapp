@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import PantherLogo from "../images/Panther-Dark-Logo-white.png"
+import SubscribeFooter from "./SubscribeFooter"
 
 const Footer = () => (
     <StaticQuery query={graphql`
@@ -105,10 +106,16 @@ const Footer = () => (
                     </div>
                 </div>
                 <div className="col-md-4">
-                    <div className="row">
+                    <div className="row" style={{marginBottom:`42px`}}>
                         <div className="col-12" style={{paddingTop:`47px`, paddingBottom:`65px`}}>
                             <h3>{props.wordpressAcfOptions.options.cta.heading}</h3>
                             <a href={props.wordpressAcfOptions.options.cta.button_link} className="btn btn-light">{props.wordpressAcfOptions.options.cta.button_text}</a>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-12">
+                            <h3>Subscribe to newsletter</h3>
+                            <SubscribeFooter />
                         </div>
                     </div>
                 </div>

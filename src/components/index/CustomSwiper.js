@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Swiper from 'react-id-swiper';
 //import ReactDOM from 'react-dom';
+//import sliderStyles from "./slider.module.css";
 
   const CustomSwiper = ({children}) => {
   
@@ -10,6 +11,10 @@ import Swiper from 'react-id-swiper';
     const params = {
         //containerClass: 'swiper-container d-flex',
         //wrapperClass: 'swiper-wrapper col-md-9 col-lg-8 ml-auto',
+        lazy: true,
+        autoplay: {
+            delay: 5000,
+        },
         pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -22,6 +27,7 @@ import Swiper from 'react-id-swiper';
  }
         },
       }
+      
       
     }
     
@@ -40,13 +46,15 @@ import Swiper from 'react-id-swiper';
     };
 
     return (
-      <div>
+      <>
         <Swiper getSwiper={updateSwiper} {...params}>
           {children}
         </Swiper>
-        <button onClick={goPrev}>Prev</button>
-        <button onClick={goNext}>Next</button>
-      </div>
+        <div className="prev-next-wrap text-right" style={{marginTop:`10px`}}>
+            <button onClick={goPrev} className="btn btn-light rounded-circle border border-secondary" style={{width:`48px`, height:`48px`, marginRight:`20px`}}>&lt;</button>
+            <button onClick={goNext} className="btn btn-light rounded-circle border border-secondary" style={{width:`48px`, height:`48px`}}>&gt;</button>
+        </div>
+      </>
     );
   };
 

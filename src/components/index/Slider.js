@@ -4,7 +4,6 @@ import { graphql, StaticQuery } from 'gatsby'
 
 import Img from "gatsby-image"
 //import 'swiper/css/swiper.min.css';
-//import sliderStyles from "./slider.module.css";
 import Swiper from "./CustomSwiper"
 
 
@@ -50,7 +49,7 @@ const Slider = () => (
             <div style={{
                 background:`#F0F0F0`,
                 paddingTop:`89px`,
-                padingBottom:`100px`,
+                paddingBottom:`100px`,
             }}>
                 <div className="container">
                     <div className="row">
@@ -67,7 +66,8 @@ const Slider = () => (
                                     <div data-name={item.content.title} key={i}>
                                         <div className="d-md-flex no-gutters">
                                             <div className="col-md-8 p-pn9 mw-650 order-md-2">
-                                                <Img fluid={item.image.localFile.childImageSharp.fluid} />
+                                                <Img fluid={item.image.localFile.childImageSharp.fluid} className="swiper-lazy" />
+                                                <div className="swiper-lazy-preloader swiper-lazy-preloader-white" />
                                             </div>
                                             <div className="col d-flex flex-column justify-content-center pr-5 order-md-1">
                                                 <h3>{item.content.title}</h3>
