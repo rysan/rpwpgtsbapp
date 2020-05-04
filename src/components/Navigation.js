@@ -3,7 +3,7 @@ import { graphql, StaticQuery, Link } from 'gatsby'
 import styled from "styled-components"
 //import SiteInfo from "./SiteInfo"
 //import PropTypes from "prop-types"
-
+import navigationStyles from "./topnavigation.module.css";
 
 
 
@@ -33,9 +33,10 @@ const Navigation = () => (
 }
   `}
   render={props =>  (
+    <nav id="nav" className={navigationStyles.topMenu}>
         <ul className="list-unstyled">
             {props.allWordpressWpApiMenusMenusItems.edges[0].node.items.map((item, i) => (
-                <li key={i}>
+                <li key={i} className={item.wordpress_children ? "menu-item-has-children" : null}>
                     <MenuItem to={item.object_slug} activeClassName="nav-active">{item.title}</MenuItem>
                     {item.wordpress_children ? (
                         <>
@@ -51,6 +52,7 @@ const Navigation = () => (
                 </li>
             ))}
         </ul>
+    </nav>
     )} />
 )
 

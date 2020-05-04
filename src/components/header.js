@@ -23,9 +23,7 @@ const Header = () => (
         <img src={PantherLogo} alt="panther logo" className="img-fluid" />
         </Link>
         <div className="ml-auto position-relative" style={{minHeight: `45px`,}}>
-            <nav id="nav">
-                <Navigation />
-            </nav>
+            <Navigation />
         </div>
         
       </div>
