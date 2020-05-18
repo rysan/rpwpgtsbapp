@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import Img from "gatsby-image"
-import Subscribe from "./Subscribe"
+import Subscribe from "./DemoForm"
 
 //import WPShortcodes from "./shortcodes"
 //import { MDXProvider } from "@mdx-js/react"
