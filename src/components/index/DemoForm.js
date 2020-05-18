@@ -23,7 +23,7 @@ export default () => (
         //console.log(JSON.stringify(values, null, 2));
         //actions.setSubmitting(false);
         let bodyFormData = new FormData()
-        bodyFormData.append( 'email', values.email )
+        bodyFormData.append( 'your-email', values.email )
         bodyFormData.append( 'your-subject', 'Request a Demo form' )
         bodyFormData.append( 'your-name', 'Subscriber' )
         bodyFormData.append( 'your-email', values.email )
