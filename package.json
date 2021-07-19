@@ -26,7 +26,7 @@
     "gatsby-plugin-sharp": "^2.6.0",
     "gatsby-plugin-styled-components": "^3.3.0",
     "gatsby-source-filesystem": "^2.3.0",
-    "gatsby-source-wordpress": "^3.3.0",
+    "gatsby-source-wordpress": "^4.0.8",
     "gatsby-transformer-sharp": "^2.5.0",
     "graphql-tag": "^2.10.3",
     "innertext": "^1.0.3",
